@@ -41,7 +41,7 @@ public class AddressBook {
                     String zip = sc.next();
                     System.out.println("Enter Phone Number: ");
                     String mob = sc.next();
-                    contact.add(new Data(firstName, lastName, adress,city,state,zip));// Creating a new object and adding it to list
+                    contact.add(new Data(firstName, lastName, adress,city,state,zip,mob));// Creating a new object and adding it to list
                     System.out.println("Would you like to add someone else? 1: Yes, 2: No");
                     menu = sc.nextInt();
                 }
@@ -65,7 +65,7 @@ public class AddressBook {
                 String zip = sc.next();
                 System.out.println("Enter Phone Number: ");
                 String mob = sc.next();
-                Data person = new Data(firstName, lastName, adress,city,state,zip);
+                Data person = new Data(firstName, lastName, adress,city,state,zip,mob);
                 contact.set(index,person);
 
                 break;
@@ -79,6 +79,7 @@ public class AddressBook {
                     System.out.println(contact.get(i));
                     System.out.println();
                 }
+
                 System.out.println("=================================================================");
 
                 break;
@@ -86,7 +87,6 @@ public class AddressBook {
                 case 4:
 
                 System.out.println("\nThere are " + contact.size() + " people in this address book.\n");
-                // Collections.sort(contact);
                 System.out.println("------------------------------------------------------------------");
                 int count = 0;
                 for (int i = 0; i < contact.size(); i++) {
@@ -121,8 +121,8 @@ public class AddressBook {
         System.out.println("Goodbye!  Have a Nice Day");
     }
 
-    private void addData(String firstName, String lastName, String adress,String city,String state,String zip) {
-        Data person = new Data(firstName, lastName, adress,city,state,zip);
+    private void addData(String firstName, String lastName, String adress,String city,String state,String zip,String mob) {
+        Data person = new Data(firstName, lastName, adress,city,state,zip,mob);
         contact.add(person);
     }
 
@@ -130,11 +130,11 @@ public class AddressBook {
         // boolean isInList=false;
         for(Data per : contact){
             if(per.getFirstName().equals(p)){
-                System.out.printf("Present contact");
-                System.out.println();
+                System.out.println("Present contact");
+
+                System.out.println(per);
+                System.out.println("-----------------------------------------------------");
                 // isInList=true;
-            }else{
-                System.out.printf("Not present add ");
             }
         }
 

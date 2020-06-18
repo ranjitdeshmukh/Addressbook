@@ -5,17 +5,16 @@ public class Data {
     private String city = null;
     private String state = null;
     private String zip = null;
-    // private String mob = null;
+    private String mob = null;
 
-    public Data(String firstName, String lastName, String adress, String city,String state,String zip) {
+    public Data(String firstName, String lastName, String adress, String city,String state,String zip,String mob) {
         this.firstName = firstName;
         this.lastName = lastName;
-        // this.email = email;
         this.adress=adress;
         this.city=city;
         this.state=state;
         this.zip=zip;
-        // this.mob=mob;
+        this.mob=mob;
     }
 
     public String getFirstName() {
@@ -64,8 +63,15 @@ public class Data {
         this.zip = zip;
     }
 
+    public String getMobile() {
+        return mob;
+    }
+
+    public void setMobile(String mob) {
+        this.mob = mob;
+    }
 
     public String toString() {
-        return String.format(firstName+" "+lastName+" "+adress+"  "+city+" "+state+" "+zip);
+        return String.format(firstName+" "+lastName+" "+adress+"  "+city+" "+state+" "+zip+" "+mob);
     }
 }
